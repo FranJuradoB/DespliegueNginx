@@ -171,6 +171,16 @@ Como podemos observar, solo nos salen los datos de nuestra máquina física, con
 
 Tras aceptar ya tenemos la conexión establecida como podemos observar y podemos enviar cualquier archivo a través de Filezilla. Nos aparece a la derecha el directorio de nuestra Debian.
 
+![img](./Screenshots/33.jpg)
 
+Hemos probado un archivo pdf para comprobar que funciona correctamente.
 
+### Ponemos en funcionamiento la página web
 
+Accedemos desde la máquina física al navegador.
+
+![img](./Screenshots/31.jpg)
+
+Aceptamos los riesgos y nos sale ya nuestra página web:
+
+![img](./Screenshots/32.jpg)
