@@ -9,7 +9,7 @@ La autenticación de acceso básico en transacciones HTTP permite que un navegad
 Lo primero que debemos hacer es si el siguiente paquete está instalado correctamente con el siguiente comando:
 - dpkg -l | grep openssl
 
-![img1](/screenshots/1.png)
+![img1](./screenshots/1.png)
 
 Y si no lo estuviera, se instala.
 
@@ -17,7 +17,7 @@ Y si no lo estuviera, se instala.
 Vamos a crear varios usuarios y contraseñas para el acceso web a nuestra página web.
 Para ello crearemos un archivo oculto llamado "./htpasswd" en el directorio de configuración /etc/nginx donde guardaremos nuestros usuarios y contraseñas:
 
-![img2](/screenshots/2.png)
+![img2](./screenshots/2.png)
 
 Crearemos un password cifrado para el usuario:
 
