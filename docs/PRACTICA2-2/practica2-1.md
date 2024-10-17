@@ -21,24 +21,24 @@ Para ello crearemos un archivo oculto llamado "./htpasswd" en el directorio de c
 
 Crearemos un password cifrado para el usuario:
 
-![img3](/screenshots/3.png)
+![img3](./screenshots/3.png)
 
 Nos pedirá verificarlas también.
 
 Y con el comando cat podemos comprobar que nos lo ha almacenado correctamente:
 
-![img4](/screenshots/4.png)
+![img4](./screenshots/4.png)
 
 Haremos lo mismo y crearemos un usuario extra con mi nombre y otro con el apellido:
 
-![img5](/screenshots/5.png)
+![img5](./screenshots/5.png)
 
-![img6](/screenshots/6.png)
+![img6](./screenshots/6.png)
 
 Y mostramos que todo ha ido correctamente con el siguiente comando:
 - cat /etc/nginx/.htpasswd
 
-![img7](/screenshots/7.png)
+![img7](./screenshots/7.png)
 
 # Configuración servidor Nginx
 Ahora tenemos que editar la configuración básica del server block para aplicar la restricción de acceso.
@@ -46,7 +46,7 @@ Usaremos ``` sudo nano /etc/nginx/sites-available/fjurado```
 
 Y añadimos las siguientes líneas:
 
-![img8](/screenshots/8.png)
+![img8](./screenshots/8.png)
 
 Y reiniciamos:
 
@@ -58,32 +58,32 @@ Y reiniciamos:
 
 Al entrar al sitio web, después de haber realizado todos los cambios de arriba, podremos comprobar que nos permite el acceso:
 
-![img9](/screenshots/9.png)
+![img9](./screenshots/9.png)
 
 - COMPROBACIÓN 2:
 
 Si cancelamos la autenticación en vez de introducir los datos nos da el siguiente error:
 
-![img10](/screenshots/10.png)
+![img10](./screenshots/10.png)
 
 
 ## Tareas
 
-![img11](/screenshots/11.png)
+![img11](./screenshots/11.png)
 
 Vamos a intentar entrar usando el login equivocado, usando otros usuarios, y observamos que el log de error nos lo notifica.
 
 A continuación vemos que el usuario válido nos lo notifica en el log:
 
-![img12](/screenshots/12.png)
+![img12](./screenshots/12.png)
 
 En la ruta ```sudo nano /etc/nginx/sites-available/nombre_web``` modificaremos algunos valores, añadiendo una nueva "location:
 
-![img13](/screenshots/13.png)
+![img13](./screenshots/13.png)
 
 Vamos a usar ésta vez una ruta hacia contact.html , para de esa forma poder entrar al sitio web, pero que no se pueda acceder a dicha página salvo excepciones.
 
-![img14](/screenshots/14.png) 
+![img14](./screenshots/14.png) 
 
 Nos pide login para dicha zona de nuestro sitio web. Hemos duplicado y modificado el index.html para realizar la práctca.
 
@@ -94,7 +94,7 @@ Y reiniciamos el servicio ```sudo systemctl restart nginx```.
 
 - Tarea 1:
 
-[img15](/screenshots/15.png)
+[img15](./screenshots/15.png)
 
 Entramos en el archivo de configuración y añadimos el "deny" para denegar el acceso a dicha IP, y el "allow" para permitir dichas IP's.
 También "deny all" para denegar el acceso al resto de IP's.
@@ -102,37 +102,37 @@ También "deny all" para denegar el acceso al resto de IP's.
 - Tarea 2:
 Ahora usamos nuestra ip de la máquina anfitriona y denegamos su acceso.
 
-![img17](/screenshots/17.png)
+![img17](./screenshots/17.png)
 
 
-![img19](/screenshots/19.png)
+![img19](./screenshots/19.png)
 
 Y comprobamos que no podemos entrar.
 
-![img18](/screenshots/18.png)
+![img18](./screenshots/18.png)
 
 Para que sea necesaria tanto la IP como el login, deberemos usar
 ```satisfy all ```
 
-![img20](/screenshots/20.png)
+![img20](./screenshots/20.png)
 
 
 
 ## Cuestiones finales 
 
-![img22](/screenshots/22.png)
+![img22](./screenshots/22.png)
 
 En este caso no se podría acceder porque al estar la opción de satisfy all, tanto ip como la introducción de usuario es obligatorio que se cumplan ambas condiciones.
 
-![img23](/screenshots/23.png)
+![img23](./screenshots/23.png)
 
 En este caso la opción "deny all" está más arriba que el allow correspondiente a la ip que intenta acceder, y da igual que se introduzca bien el usuario y contraseña, porque deniega todos los accesos.
 
-![img25](/screenshots/25.png)
+![img25](./screenshots/25.png)
 
 En este caso sí que se podrá acceder porque la opción "satisfy any" valora dos condiciones, ip correcta e introducción de usuario y contraseña, y aunque la ip se deniegue la correcta introducción del login prevalece por encima.
 
-![img26](/screenshots/26.png)
+![img26](./screenshots/26.png)
 
 Crearíamos un usuario o los que quisiéramos y usaríamos el siguiente código:
 
