@@ -94,7 +94,7 @@ Y reiniciamos el servicio ```sudo systemctl restart nginx```.
 
 - Tarea 1:
 
-[img15](./screenshots/15.png)
+![img15](./screenshots/15.png)
 
 Entramos en el archivo de configuración y añadimos el "deny" para denegar el acceso a dicha IP, y el "allow" para permitir dichas IP's.
 También "deny all" para denegar el acceso al resto de IP's.
@@ -141,7 +141,7 @@ location / {
     try_files $uri $uri/ =404;
 }
 
->location /Proyectos {
+location /Proyectos {
     auth_basic "Área restringida - Proyectos";
     auth_basic_user_file /etc/nginx/conf.d/htpasswd_proyectos;
 }
