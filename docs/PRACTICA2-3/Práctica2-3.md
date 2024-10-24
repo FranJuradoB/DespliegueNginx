@@ -5,6 +5,9 @@
 
 # Nginx Servidor
 
+Como paso previo a trabajar con esta práctica, vamos a realizar una clonación de la máquina virtual, para usar la nueva como servidor proxy.
+Para ello debemos especificar que tenga otra MAC, de lo contrario nos dará problemas con la IP.
+
 ![img1](./screenshots/1.png)
 ![img2](./screenshots/2.png)
 
