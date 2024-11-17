@@ -2,19 +2,31 @@
 ## Instalación de Tomcat
 1. Instalación de Java
 En el caso de que no lo tengamos instalado Java, instalaremos el jdk
+
 ```sudo apt install default-jre```
+
 ![img1](./screenshots/1.png)
+
 Podemos comprobar la versión instalada con el siguiente comando: 
+
 ```java -version```
+
 ![img2](./screenshots/2.png)
+
 2. Tomcat
+
 Instalaremos la versión 10 de Tomcat
+
 ```sudo apt install tomcat10 tomcat10-admin```
 
 ![img3](./screenshots/3.png)
+
 Posteriormente tendremos que crear el usuario para Tomcat. Y para ello, lo que debemos modificar es el archivo ```tomcat-users.xml``` 
+
 y quedará de la siguiente forma: 
+
 ![img4](./screenshots/4.png)
+
 Cuando ya hayamos configurado el archivo procederemos a reiniciar el servicio Tomcat con el siguiente comando: ```sudo systemctl restart tomcat```. Y comprobaremos que el servicio se ha iniciado correctamente usando ```sudo systemctl status tomcat```. Deberá aparecernos algo como lo siguiente:
 
 ![img5](./screenshots/5.png)
@@ -34,6 +46,7 @@ Desde este enlace lo descargaremos: ```https://tomcat.apache.org/tomcat-6.0-doc/
 Lo seleccionamos y lo desplegamos:
 
 ![img8](./screenshots/8.png)
+
 ![img9](./screenshots/9.png)
 
 Y accedemos para ver que está correctamente desplegado:
@@ -51,6 +64,7 @@ Para el despliegue con Maven, tendremos que instalar Maven al igual que hicimos 
 Podemos consultar la versión instalada con el comando: ```nvm --v```
 
 ### Configuración de Maven
+
 Ahora lo que tenemos que hacer es añadir un nuevo usuario al archivo ```tomcat-users.xml``` para poder desplegar con Maven, y el archivo quedará ahora de la siguiente forma:
 
 ![img12](./screenshots/12.png)
@@ -64,9 +78,11 @@ Ahora clonaremos el repositorio de ejemplo que se nos ha facilitado y lo despleg
 ![img14](./screenshots/14.png)
 
 Cambiamos de rama para trabajar mejor: 
+
 ![img15](./screenshots/15.png)
 
 Ahora tenemos que editar el archivo ```pom.xml``` para añadirle la configuración. 
+
 ![img16](./screenshots/16.png)
 
 Tendrá que quedar así:
