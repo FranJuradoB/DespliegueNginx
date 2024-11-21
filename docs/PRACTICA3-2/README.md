@@ -35,6 +35,8 @@ Y accederemos a la carpeta.
 Una vez dentro, debemos instalar las librerías necesarias para que nuestra aplicación funcione correctamente.
 
 ```npm install```
+
+
 ![img5](./screenshots/5.png)
 
 ![img6](./screenshots/6.png)
