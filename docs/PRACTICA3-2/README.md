@@ -3,6 +3,8 @@
 Para empezar con esta práctica, debemos de parar nuestro servicio de Tomcat ya que nos podría ocasionar problemas. Para ello:
 
 ```sudo systemctl stop tomcat10```
+
+
 ![img1](./screenshots/1.png)
 
 
