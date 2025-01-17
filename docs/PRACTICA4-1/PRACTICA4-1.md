@@ -13,7 +13,21 @@
 ___________________________________________________________
 ## 0. Paso previo: Conexión por SSH
 
+Como paso previo a la instalación podemos y deberíamos conectarnos por SSH a nuestra máquina física en todas las prácticas.
+Podemos hacerlo de esta forma: 
+
 ![img1](./screenshot/14ssh.png)
+
+Otra posible opción es configurar desde VirtualBox la máquina virtual, usando el modo ```NAT``` en la sección ```Red```.
+Configuramos en la sección avanzada el ```Reenvío de puertos```. Y agregamos una nueva regla: 
+
+    Anfitrión: 127.0.0.1 (IP de la máquina host)
+    Puerto anfitrión: 2222 (o cualquier puerto disponible)
+    Invitado: IP de su máquina virtual
+    Puerto invitado: 22
+
+Es necesario tener instalado el servidor SSH y funcionando en la máquina virtual.
+Se puede instalar con ```sudo apt-get install openssh-server```
 
 ## 1. Instalación de servidor DNS
 Lo primero que debemos hacer es instalar ell servidor DNS en el servidor de prácticas. Para ello, nos lo vamos a instalar con el siguiente comando:
@@ -67,14 +81,14 @@ Y ahora para curarnos en salud, reiniciamos y comprobamos que el servicio marcha
 ## 4. Configuración del archivo named.conf.local
 
 En este archivo vamos a configurar las zonas, y para esta práctica declaramos la zona deaw.es.
-Mediante el comando ````sudo nano /etc/bind/named.conf.local``` y añadimos:
+Mediante el comando ```sudo nano /etc/bind/named.conf.local``` y añadimos:
 
-    ```
-    zone "deaw.es" {
-        type master;
-        file "/etc/bind/db.deaw.es";
-    };
-    ```
+```
+zone "deaw.es" {
+    type master;
+    file "/etc/bind/db.deaw.es";
+};
+```
 
 ![img21](./screenshot/n21.png)
 
